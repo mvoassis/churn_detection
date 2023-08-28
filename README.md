@@ -13,7 +13,7 @@ The objective is to help their team to decrease customer dropout level. In the i
 
 ## Quick Access
 
-* Exploratory Data Analysis - EDA (Notebook)
+* [Exploratory Data Analysis - EDA (Notebook)](https://github.com/mvoassis/churn_detection/blob/main/notebooks/Churn_prediction_EDA.ipynb)
 * .
 
 ## Files
