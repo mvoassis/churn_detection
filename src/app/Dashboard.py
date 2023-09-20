@@ -128,7 +128,7 @@ with aba2:
 
     coluna = st.selectbox('Select a Column', list(data2.columns.drop('Churn')))    
     fig = px.bar(data, x=coluna, y='Churn',
-                 title=f'Barplot: Distribution of Churn per{coluna}')
+                 title=f'Barplot: Distribution of Churn per {coluna}')
     st.plotly_chart(fig, use_container_width=True)
 
     st.subheader('Distribution of the numeric features:')
