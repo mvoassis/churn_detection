@@ -126,19 +126,9 @@ with aba2:
     data = pd.read_csv('https://raw.githubusercontent.com/mvoassis/churn_detection/main/data/data_clean_v5.csv')
     data2 = data.copy()
 
-    # col51, col52 = st.columns(2)
-    # with col51:
-    coluna = st.selectbox('Selecione as colunas', list(data2.columns.drop('Churn')))
-    # with col52:
-        # churn_distribution = data2['Churn'].value_counts(normalize=True)
-        #
-        # fig = px.bar(x=churn_distribution.values, y=churn_distribution.index, orientation='h', title='Churn - Distribution')
-        # fig.update_yaxes(tickvals=[0, 1], ticktext=['0', '1'])
-        # fig.update_yaxes(title='Churn')
-        # fig.update_xaxes(title='Frequency')
-        # st.plotly_chart(fig, use_container_width=True)
+    coluna = st.selectbox('Select a Column', list(data2.columns.drop('Churn')))    
     fig = px.bar(data, x=coluna, y='Churn',
-                 title='Barplot: Distribution of Churn per Payment Method')
+                 title=f'Barplot: Distribution of Churn per{coluna}')
     st.plotly_chart(fig, use_container_width=True)
 
     st.subheader('Distribution of the numeric features:')
