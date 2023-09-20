@@ -13,7 +13,7 @@ with col01:
     st.text('by: Marcos Oliveira (mvoassis@gmail.com)')
 
 with col02:
-    image = Image.open('img/logo.png')
+    image = Image.open('src/app/img/logo.png')
     st.image(image)
 
 
