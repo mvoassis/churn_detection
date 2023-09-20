@@ -1,6 +1,5 @@
 import pandas as pd
 import pickle
-from category_encoders import TargetEncoder
 
 
 def load_model(name):
