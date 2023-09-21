@@ -104,6 +104,31 @@ The following steps were taken:
 
 6. The optimized AdaBoost model achieved 89% recall on the test set, with an F1-score of 57%.
 
+> **Main Insights:**
 
-...
+Since the main objective of this project is to detect the as much Churn clients as possible, Recall was used to guide the hyperparameter optimization process.
 
+Thus, the system achieved an 89% Recall rate on the test dataset.
+
+Furthermore, although this result impaired the precision of the model, the overall F1-Score was 57%, just a bit worse than most baseline models. During the tests, no model achieved F1-Score higher than 63% even after hyperparameter optimization.
+
+Some additional notes:
+
+* The usage of Bayesian Search for hyperparameter optimization considerably reduced the amount of time spent os method's analysis.
+* For the sake of organization, I decided to remove additional tests with other methods from this file, since they achieved inferior outcomes.
+* Furthermore, I've investigated if a semi-supervised approach (clustering the data before applying to classifiers) would benefit the model. It did not. Even after using tSNE or PCA, the data visualization remained grouped, which shows that the data does could not be clusterized by k-means, BDSCAN or Mean-Shift methods.
+
+### 3 - Churn Detector - Development of a WEB App
+
+In this section, I will walk you through the implementation of the Churn Detector as a user-friendly web application using the **Streamlit framework**.
+
+Application Overview
+The Churn Detector web app serves as an intuitive tool for users to predict customer churn based on the insights gained from our data analysis and machine learning models. It allows users to input relevant customer information and receive predictions instantly. 
+
+Streamlit proved to be an excellent choice for converting our analytical findings into a practical and accessible tool. Here's an overview of how I utilized Streamlit's capabilities:
+
+1. User Interface (UI) Design: I designed a clean and user-friendly interface that enables users to input customer data effortlessly. Fields such as gender, partner status, dependents, and various service subscriptions can be easily filled out.
+
+2. Prediction Engine: Behind the scenes, the machine learning model, trained on the cleaned and preprocessed data, powers the predictive functionality. Users can see the predicted churn status instantly after entering the customer's details.
+
+3. Visualizations: To enhance user understanding, I integrated interactive visualizations within the app. Users can explore charts displaying relevant information, such as the distribution of churn predictions and categorical features distribution. 
