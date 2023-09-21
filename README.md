@@ -77,5 +77,33 @@ Regarding the EDA, the following steps were performed:
 
 ### 2 - Classification Model Development
 
+In this project, the main objective was to optimize the detection of Churn clients, so the company could take actions prevent it. Thus, the objective was to priorityze Recall, while trying to preserve a fair F1-Score. 
+
+For classifying customers as churn or not churn, several machine learning classification algorithms were tested:
+
+* Random Forest
+* Gradient Boosting
+* Logistic Regression
+* XGBoost
+* AdaBoost
+* CatBoost
+* Extra Trees
+* Neural Network
+
+The following steps were taken:
+
+1. The data was split into train (80%) and test (20%) sets.
+
+2. Target encoding was applied to the categorical variables in the train set.
+
+3. The train set was then balanced using SMOTE oversampling.
+
+4. Models were trained on the balanced train set and evaluated on the held-out test set.
+
+5. Hyperparameter optimization was performed for the best performing model, AdaBoost, using BayesSearchCV.
+
+6. The optimized AdaBoost model achieved 89% recall on the test set, with an F1-score of 57%.
+
+
 ...
 
