@@ -34,7 +34,7 @@ The following verifications and adjustments were performed regarding data cleani
 
   2. phone.MultipleLines, internet.OnlineSecurity, internet.OnlineBackup, internet.DeviceProtection, internet.TechSupport, internet.StreamingTV, internet.StreamingMovies: have "No XXX service" values, which  could be translated by "No".
 
-  3. internet.InternetService, account.Contract, account.PaymentMethod: apply one-hot encoding.
+  3. internet.InternetService, account.Contract, account.PaymentMethod: apply one-hot encoding? Since I intended to apply tree-based methods, I decided to use Target Encoder instead, which was implemented on the next step (Classification Notebook). 
 
   4. account.Charges.Total: convert to float
 
@@ -70,6 +70,10 @@ Regarding the EDA, the following steps were performed:
 -----
 
 - Mean values for the non-binary features "account_Charges_Monthly", "account_Charges_Total" and "customer_tenure" seems to influence the Churn status. (Boxplot)
+- There seems to be a correlation between Churn and some informations of the categorical features, where some values are more present in Churn clients. They are:
+  - Payment method = Electronic Check
+  - Internet service = Fiber Optic
+  - Contract type = Month-to-month 
 
 -----
 
